@@ -13,11 +13,6 @@ VALUES ('Nix', 'male'),
        ('OLeg', 'male'),
        ('Volodya', 'male');
 
-INSERT into DEVELOPER (name, sex)
-VALUES ('Nix', 'male'),
-       ('OLeg', 'male'),
-       ('Volodya', 'male');
-
 INSERT into SKILL (technology, skill)
 VALUES ('Java', 'Senior'),
        ('C++', 'Senior'),
@@ -44,7 +39,9 @@ VALUES (1, 1),
        (2, 5),
        (1, 2),
        (2, 1),
-       (3, 1);
+       (3, 1),
+       (2, 3),
+       (3, 4);
 
 INSERT INTO DEVELOPER_SKILL(developer_id, SKILL_ID)
 VALUES (1, 1),

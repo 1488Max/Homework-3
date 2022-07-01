@@ -1,0 +1,2 @@
+SELECT avg(SALARY)
+from DEVELOPER;

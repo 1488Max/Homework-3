@@ -1,0 +1,3 @@
+SELECT max(SALARY)
+from DEVELOPER;
+
