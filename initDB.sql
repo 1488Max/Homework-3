@@ -1,25 +1,25 @@
 Create table developer
 (
-    developerID identity primary key,
+    id identity primary key,
     name        varchar(100),
     sex         varchar(100)
 );
 Create table company
 (
-    companyID identity primary key,
+    id identity primary key,
     name      varchar(100),
     area      varchar(100)
 );
 
 Create table customer
 (
-    customerID identity primary key,
+    id identity primary key,
     name       varchar(100),
     surname    varchar(100)
 );
 Create table skill
 (
-    skillID    identity primary key,
+    id    identity primary key,
     technology varchar(100),
     skill      varchar(100)
 );
@@ -27,45 +27,36 @@ Create table skill
 
 CREATE table developer_skill
 (
-    developer_ID BIGINT not null,
-    skill_ID     BIGINT not null,
-    PRIMARY KEY (developer_ID, skill_ID),
-    FOREIGN KEY (developer_ID) REFERENCES developer (developerID),
-    FOREIGN KEY (skill_ID) REFERENCES skill (skillID)
+    developer_id BIGINT not null,
+    skill_id     BIGINT not null,
+    PRIMARY KEY (developer_id, skill_id),
+    FOREIGN KEY (developer_id) REFERENCES developer (id),
+    FOREIGN KEY (skill_id) REFERENCES skill (id)
 );
 Create table project
 (
-    projectID   identity primary key,
+    id   identity primary key,
     name        varchar(100),
     description varchar(100),
-    customer_ID BIGINT,
-    company_ID  BIGINT,
-    foreign key (customer_ID) REFERENCES customer (customerID),
-    foreign key (company_ID) REFERENCES company (companyID)
+    customer_id BIGINT,
+    company_id  BIGINT,
+    foreign key (customer_id) REFERENCES customer (id),
+    foreign key (company_id) REFERENCES company (id)
 );
 
 CREATE table developer_project
 (
-    developer_ID BIGINT not null,
-    project_ID   BIGINT not null,
-    PRIMARY KEY (developer_ID, project_ID),
-    FOREIGN KEY (developer_ID) REFERENCES developer (developerID),
-    FOREIGN KEY (project_ID) REFERENCES project (projectID)
+    developer_id BIGINT not null,
+    project_id   BIGINT not null,
+    PRIMARY KEY (developer_id, project_id),
+    FOREIGN KEY (developer_id) REFERENCES developer (id),
+    FOREIGN KEY (project_id) REFERENCES project (id)
 );
 
-ALTER TABLE SKILL
+ALTER TABLE skill
     ADD CONSTRAINT technologies_names
         Check (TECHNOLOGY IN ('Java', 'C++', 'C#', 'JS'));
 
-ALTER TABLE SKILL
+ALTER TABLE skill
     ADD CONSTRAINT skills_levels
         Check (SKILL IN ('Senior', 'Middle', 'Junior'));
-
-
-
-
-
-
-
-
-

@@ -1,12 +1,8 @@
 SELECT avg(SALARY)
 from DEVELOPER
-where DEVELOPERID in (SELECT DEVELOPERID
-                      from DEVELOPER
-                      where DEVELOPERID in (SELECT DEVELOPER_ID
-                                            from DEVELOPER_PROJECT
-                                            where PROJECT_ID in (SELECT PROJECTID
-                                                                 from PROJECT
-                                                                 where COST in (SELECT min(COST) from PROJECT)))
-    )
+         join DEVELOPER_PROJECT on DEVELOPER.ID = DEVELOPER_PROJECT.DEVELOPER_ID
+         join PROJECT  on DEVELOPER_PROJECT.PROJECT_ID = PROJECT.ID
+where COST in (SELECT min(COST) from PROJECT)
+
 
 

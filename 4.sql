@@ -3,20 +3,20 @@ ALTER TABLE PROJECT
 
 UPDATE PROJECT
 set PROJECT.cost = 5464534
-where PROJECTID = 1;
+where ID = 1;
 
 UPDATE PROJECT
 set PROJECT.cost = 124534
-where PROJECTID = 2;
+where ID = 2;
 
 UPDATE PROJECT
 set PROJECT.cost = 4542
-where PROJECTID = 3;
+where ID = 3;
 
 UPDATE PROJECT
 set PROJECT.cost = 1234564
-where PROJECTID = 4;
+where ID = 4;
 
 UPDATE PROJECT
 set PROJECT.cost = 321864
-where PROJECTID = 5;
+where ID = 5;
